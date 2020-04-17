@@ -438,9 +438,9 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'whatyouhide/vim-gotham'
-Plugin 'fatih/vim-go'
+" Plugin 'Valloric/YouCompleteMe'
+" Plugin 'whatyouhide/vim-gotham'
+" Plugin 'fatih/vim-go'
 Plugin 'preservim/nerdtree'
 Plugin 'itchyny/lightline.vim'
 Plugin 'Yggdroot/indentLine'
