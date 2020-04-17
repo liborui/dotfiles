@@ -36,6 +36,11 @@ source ~/.zshrc
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 source ~/.zshrc
 
+## Alternate Python version
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python2 100 # Set python2 as default
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 150 # Set python3 as default
+sudo update-alternatives --config python # Manually set default python
+
 ## install vim config
 cp vim/rpi.vimrc ~/.vimrc
 mkdir -p ~/.vim/colors/ && cp vim/colors/jellybeans.vim ~/.vim/colors/
