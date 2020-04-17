@@ -9,7 +9,7 @@ read email
 git config --global user.email $email
 git config --global user.name $full_name
 
-ssh-keygen -t rsa -b 4096 -C $email
+ssh-keygen -t rsa -b 4096 -C "$email"
 
 # alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 

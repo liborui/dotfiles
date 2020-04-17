@@ -26,17 +26,15 @@ sudo apt install -y build-essential vim zsh git tree cmake libboost-dev libssl-d
 ## install `oh-my-zsh`
 cd ~/dotfiles
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-cp zsh/zshrc.conf ~/.zshrc
-cat zsh/linux-zshrc.conf >> ~/.zshrc
-cp zsh/lbr.zsh-theme ~/.oh-my-zsh/themes/
+
+## Setup `oh-my-zsh`
+cp rpi.zshrc ~/.zshrc
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+cp zsh/theme-powerlevel10k.zsh ~/.p10k.zsh
 source ~/.zshrc
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 source ~/.zshrc
 
-# My zsh theme
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
-ZSH_THEME="powerlevel10k/powerlevel10k"
-cp zsh/theme-powerlevel10k.zsh ~/.p10k.zsh
 # fonts
 git clone https://github.com/powerline/fonts.git --depth=1
 cd fonts
@@ -45,7 +43,7 @@ cd ..
 rm -rf fonts
 
 # install vim config
-cp vim/vimrc.config ~/.vimrc
+cp vim/rpi.vimrc ~/.vimrc
 mkdir -p ~/.vim/colors/ && cp vim/colors/jellybeans.vim ~/.vim/colors/
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
