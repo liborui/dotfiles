@@ -3,12 +3,12 @@
 # this script setup my personal ubuntu 18.04 dev-env for digital ocean host
 cd ~
 
-# Check system info: CPU, OS, OS bit
+## Check system info: CPU, OS, OS bit
 echo "CPU Information: `cat /proc/cpuinfo`"
 echo "OS Information: `lsb_release  -a`"
 echo "System is a `getconf LONG_BIT` bit system"
-# Add Tsinghua source of apt
-# TODO!
+## Add Tsinghua source of apt
+## TODO!
 
 ## install basic tools
 sudo apt update
@@ -22,6 +22,7 @@ sudo apt install -y build-essential vim zsh git tree cmake libboost-dev libssl-d
 # pip3 install virtualenv scipy numpy pandas jupyter tensorflow scikit-learn matplotlib seaborn pillow pyyaml requests
 
 ## Setup Git
+./git_setup.sh
 
 ## install `oh-my-zsh`
 cd ~/dotfiles
@@ -35,23 +36,24 @@ source ~/.zshrc
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 source ~/.zshrc
 
-# fonts
+## install vim config
+cp vim/rpi.vimrc ~/.vimrc
+mkdir -p ~/.vim/colors/ && cp vim/colors/jellybeans.vim ~/.vim/colors/
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
+sudo apt-get install python3 python3-dev python3-setuptools
+~/.vim/bundle/YouCompleteMe/install.py # --clang-completer --tern-completer # the last two are too slow, maybe later
+
+## install tmux config
+git clone https://github.com/gpakosz/.tmux.git ~/.tmux
+ln -s -f ~/.tmux/.tmux.conf ~/.tmux.conf
+cp ~/.tmux/.tmux.conf.local ~/.
+cp tmux/tmux.local.conf ~/.tmux.conf.local
+
+## fonts
 git clone https://github.com/powerline/fonts.git --depth=1
 cd fonts
 ./install.sh
 cd ..
 rm -rf fonts
 
-# install vim config
-cp vim/rpi.vimrc ~/.vimrc
-mkdir -p ~/.vim/colors/ && cp vim/colors/jellybeans.vim ~/.vim/colors/
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim +PluginInstall +qall
-vim -c GoInstallBinaries
-~/.vim/bundle/YouCompleteMe/install.py # --clang-completer --tern-completer # the last two are too slow, maybe later
-
-# install tmux config
-git clone https://github.com/gpakosz/.tmux.git ~/.tmux
-ln -s -f ~/.tmux/.tmux.conf ~/.tmux.conf
-cp ~/.tmux/.tmux.conf.local ~/.
-cp tmux/tmux.local.conf ~/.tmux.conf.local
