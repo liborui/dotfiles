@@ -56,6 +56,17 @@ cp ~/.tmux/.tmux.conf.local ~/.
 cp tmux/rpi.tmux.conf.local ~/.tmux.conf.local
 tmux source-file ~/.tmux.conf
 
+## [OPTIONAL] Install Rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+## [OPTIONAL] Add Tsinghua source for CARGO
+cat << EOF > $HOME/.cargo/config
+[source.crates-io]
+registry = "https://github.com/rust-lang/crates.io-index"
+replace-with = 'ustc'
+[source.ustc]
+registry = "git://mirrors.ustc.edu.cn/crates.io-index"
+EOF
+
 ## fonts
 git clone https://github.com/powerline/fonts.git --depth=1
 cd fonts

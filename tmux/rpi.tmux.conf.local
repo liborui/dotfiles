@@ -242,12 +242,14 @@ tmux_conf_copy_to_os_clipboard=true
 
 # -- user customizations -------------------------------------------------------
 # this is the place to override or undo settings
+# Disable automatic rename windows when enter a new folder
+set-option -g allow-rename off
 
 # increase history size
 set -g history-limit 100000
 
 # start with mouse mode enabled
-set -g mouse on
+# set -g mouse on
 
 # force Vi mode
 #   really you should export VISUAL or EDITOR environment variable, see manual
