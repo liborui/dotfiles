@@ -13,7 +13,7 @@ echo "System is a `getconf LONG_BIT` bit system"
 ## install basic tools
 sudo apt update
 # sudo apt -y upgrade
-sudo apt install -y build-essential vim zsh git tree cmake libboost-dev libssl-dev tmux vim git
+sudo apt install -y build-essential vim zsh git tree cmake libboost-dev libssl-dev tmux vim git python3 python3-dev
 # sudo apt install -y build-essential vim zsh git tree cmake libboost-dev libssl-dev tmux vim httpie youtube-dl pandoc git
 
 
@@ -36,7 +36,7 @@ source ~/.zshrc
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 source ~/.zshrc
 
-## Alternate Python version
+## [OPTIONAL] Alternate Python version
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python2 100 # Set python2 as default
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 150 # Set python3 as default
 sudo update-alternatives --config python # Manually set default python
@@ -67,7 +67,7 @@ replace-with = 'ustc'
 registry = "git://mirrors.ustc.edu.cn/crates.io-index"
 EOF
 
-## fonts
+## [OPTIONAL] Fonts
 git clone https://github.com/powerline/fonts.git --depth=1
 cd fonts
 ./install.sh
