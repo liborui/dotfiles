@@ -29,9 +29,9 @@ cd ~/dotfiles
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
 ## Setup `oh-my-zsh`
-cp rpi.zshrc ~/.zshrc
+cp zsh/rpi.zshrc ~/.zshrc
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
-cp zsh/theme-powerlevel10k.zsh ~/.p10k.zsh
+cp zsh/rpi.p10k.zsh ~/.p10k.zsh
 source ~/.zshrc
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 source ~/.zshrc
