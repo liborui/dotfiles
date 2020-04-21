@@ -112,5 +112,7 @@ alias gac='git add -A && git commit -m'
 alias ge='git-edit-new'
 alias gall='git add -A && git commit -m "`uname -a`" && git push origin HEAD'
 
+alias setproxy='export http_proxy=192.168.1.112:1087 && export https_proxy=192.168.1.112:1087'
+alias unsetproxy='unset http_proxy && unset https_proxy'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
