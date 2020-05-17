@@ -449,3 +449,5 @@ Plugin 'itchyny/vim-cursorword'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
+let NERDTreeShowHidden=1
+
