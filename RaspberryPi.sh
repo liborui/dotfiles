@@ -13,7 +13,8 @@ echo "System is a `getconf LONG_BIT` bit system"
 ## install basic tools
 sudo apt update
 # sudo apt -y upgrade
-sudo apt install -y build-essential vim zsh git tree cmake libboost-dev libssl-dev tmux vim git python3 python3-dev
+sudo apt install -y vim zsh git tree tmux openssh-server
+sudo apt install -y build-essential cmake libboost-dev libssl-dev python3 python3-dev
 # sudo apt install -y build-essential vim zsh git tree cmake libboost-dev libssl-dev tmux vim httpie youtube-dl pandoc git
 
 
