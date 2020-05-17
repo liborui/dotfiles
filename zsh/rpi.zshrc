@@ -90,6 +90,9 @@ export LANG=en_US.UTF-8
 # export PATH=$HOME/go/bin:$PATH
 # export PATH=/usr/local/goes/go/bin:$PATH
 
+# ZSH highlight extention
+source /home/emnets/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 # Example aliases
 alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
@@ -112,7 +115,7 @@ alias gac='git add -A && git commit -m'
 alias ge='git-edit-new'
 alias gall='git add -A && git commit -m "`uname -a`" && git push origin HEAD'
 
-alias setproxy='export http_proxy=192.168.1.112:1087 && export https_proxy=192.168.1.112:1087'
+alias setproxy='export http_proxy=192.168.1.2:1080 && export https_proxy=192.168.1.2:1080'
 alias unsetproxy='unset http_proxy && unset https_proxy'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
