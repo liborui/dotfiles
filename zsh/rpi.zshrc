@@ -91,7 +91,7 @@ export LANG=en_US.UTF-8
 # export PATH=/usr/local/goes/go/bin:$PATH
 
 # ZSH highlight extention
-source /home/emnets/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Example aliases
 alias zshconfig="mate ~/.zshrc"
