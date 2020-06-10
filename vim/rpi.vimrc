@@ -252,7 +252,7 @@ set laststatus=2
 "set fillchars+=stl:\ ,stlnc:\
 "set term=xterm-256color
 "qet termencoding=utf-8
-set mouse=i
+set mouse=n
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings
@@ -449,3 +449,5 @@ Plugin 'itchyny/vim-cursorword'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
+let NERDTreeShowHidden=1
+
