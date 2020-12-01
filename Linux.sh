@@ -43,6 +43,10 @@ sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 150 #
 sudo update-alternatives --config python # Manually set default python
 
 ## install vim config
+### Base VIM Config
+git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
+sh ~/.vim_runtime/install_basic_vimrc.sh
+### Pro VIM Config with plugins
 cp vim/rpi.vimrc ~/.vimrc
 mkdir -p ~/.vim/colors/ && cp vim/colors/jellybeans.vim ~/.vim/colors/
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
