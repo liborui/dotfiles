@@ -61,6 +61,27 @@ cp ~/.tmux/.tmux.conf.local ~/.
 cp tmux/rpi.tmux.conf.local ~/.tmux.conf.local
 tmux source-file ~/.tmux.conf
 
+## [OPTIONAL] Install Anaconda
+### Find latest anaconda in TUNA with wget
+https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/
+chmod a+x Anaconda-x
+./Anaconda-x        # Do not use sudo!
+
+## [Optional] Install NVIDIA GPU Docker
+wget (NVIDIA-GPU-Driver)
+sudo ./(NVIDIA-GPU-Driver)
+sudo apt install docker.io
+### Update NVIDIA docker source and install it
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
+   && curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add - \
+   && curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+sudo apt-get update
+sudo apt-get install -y nvidia-docker2
+sudo systemctl restart docker
+### Usage:
+docker pull pytorch/pytorch
+sudo docker run --rm --gpus all pytorch/pytorch nvidia-smi # Then there should be NVIDIA-SMI output
+
 ## [OPTIONAL] Install Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ## [OPTIONAL] Add Tsinghua source for CARGO
