@@ -18,7 +18,7 @@ export ZSH=~/.oh-my-zsh
 ZSH_THEME="powerlevel10k/powerlevel10k"
 TERM=xterm-256color
 
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=blue'
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
