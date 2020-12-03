@@ -1,0 +1,16 @@
+{
+    "runtimes": {
+        "nvidia": {
+            "path": "nvidia-container-runtime",
+            "runtimeArgs": []
+        }
+    },
+    "dns": ["10.10.0.21","8.8.8.8"],
+    "registry-mirrors": [
+        "https://registry.docker-cn.com",
+        "https://hub-mirror.c.163.com",
+        "https://docker.mirrors.ustc.edu.cn",
+        "https://ui29fbsf.mirror.aliyuncs.com"
+    ]
+}
+}

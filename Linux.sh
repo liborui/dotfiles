@@ -1,7 +1,17 @@
 # WARNING: PLEASE DO NOT USE THIS SCRIPT, JUST MANUALLY FOLLOW THE STEPS
+# this script setup my personal ubuntu 20.04 dev-env for digital ocean host
 
-# this script setup my personal ubuntu 18.04 dev-env for digital ocean host
-cd ~
+# Stage 1: Direct interact with physical machine
+## Install ssh server and git
+sudo apt install openssh-server git
+## Clone this repo
+git clone https://github.com/liborui/dotfiles.git
+## Setup non-passwd login of SSH
+ssh-copy-id -i ~/.ssh/id_rsa.pub <remote_user>@<remote_ip> -p <remote_port>
+
+
+# Stage 2: Remote control with SSH
+cd ~/dotfiles
 
 ## Check system info: CPU, OS, OS bit
 echo "CPU Information: `cat /proc/cpuinfo`"
@@ -9,13 +19,13 @@ echo "OS Information: `lsb_release  -a`"
 echo "System is a `getconf LONG_BIT` bit system"
 ## Add USTC/Tsinghua source of apt (focal for 20.04LTS)
 sudo mv /etc/apt/sources.list /etc/apt/sources.list.old
-sudo mv sources.list.ustc /etc/apt/sources.list
+sudo cp sources.list.ustc /etc/apt/sources.list
 
 ## install basic tools
 sudo apt update
 # sudo apt -y upgrade
-sudo apt install -y vim zsh git tree tmux openssh-server
-sudo apt install -y build-essential cmake libboost-dev libssl-dev python3 python3-dev
+sudo apt install -y vim zsh tree tmux net-tools
+sudo apt install -y build-essential cmake libboost-dev libssl-dev # python3 python3-dev
 # sudo apt install -y build-essential vim zsh git tree cmake libboost-dev libssl-dev tmux vim httpie youtube-dl pandoc git
 
 
@@ -27,7 +37,6 @@ sudo apt install -y build-essential cmake libboost-dev libssl-dev python3 python
 ./git_setup.sh
 
 ## install `oh-my-zsh`
-cd ~/dotfiles
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
 ## Setup `oh-my-zsh`
@@ -69,19 +78,26 @@ chmod a+x Anaconda-x
 ./Anaconda-x        # Do not use sudo!
 
 ## [Optional] Install NVIDIA GPU Docker
-wget (NVIDIA-GPU-Driver)
-sudo ./(NVIDIA-GPU-Driver)
+### First, use the Software & Update of Ubuntu to install the driver.
+Software & Update
+### Install Docker and set to 
 sudo apt install docker.io
-### Update NVIDIA docker source and install it
+### [Optional] Update NVIDIA docker source and install it
+### Ref: https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
    && curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add - \
    && curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
 sudo apt-get update
 sudo apt-get install -y nvidia-docker2
 sudo systemctl restart docker
+### Set Docker source
+sudo cp docker.daemon.json /etc/docker/daemon.json
+sudo systemctl restart docker
 ### Usage:
 docker pull pytorch/pytorch
 sudo docker run --rm --gpus all pytorch/pytorch nvidia-smi # Then there should be NVIDIA-SMI output
+docker pull ufoym/deepo
+sudo docker run --rm --gpus all ufoym/deepo nvidia-smi
 
 ## [OPTIONAL] Install Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
