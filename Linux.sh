@@ -7,8 +7,9 @@ cd ~
 echo "CPU Information: `cat /proc/cpuinfo`"
 echo "OS Information: `lsb_release  -a`"
 echo "System is a `getconf LONG_BIT` bit system"
-## Add Tsinghua source of apt
-## TODO!
+## Add USTC/Tsinghua source of apt (focal for 20.04LTS)
+sudo mv /etc/apt/sources.list /etc/apt/sources.list.old
+sudo mv sources.list.ustc /etc/apt/sources.list
 
 ## install basic tools
 sudo apt update
