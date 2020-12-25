@@ -21,6 +21,9 @@ echo "System is a `getconf LONG_BIT` bit system"
 sudo mv /etc/apt/sources.list /etc/apt/sources.list.old
 sudo cp sources.list.ustc /etc/apt/sources.list
 
+## set ssh login without password (on your PC)
+ssh-copy-id -i ~/.ssh/id_rsa.pub <username>@<ip> -p <port>
+
 ## install basic tools
 sudo apt update
 # sudo apt -y upgrade
