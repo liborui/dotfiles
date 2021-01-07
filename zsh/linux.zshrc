@@ -113,7 +113,7 @@ alias gb='git branch'
 alias gs='git status -sb' # upgrade your git if -sb breaks for you. it's fun.
 alias gac='git add -A && git commit -m'
 alias ge='git-edit-new'
-alias gall='git add -A && git commit -m "`uname -nm`" && git push origin HEAD'
+alias gall='git add -A && git commit -m "by `uname -s`@`date "+%Y-%m-%d %H:%M:%S"`" && git push origin HEAD'
 alias gallm='func(){git add -A && git commit -m $1 && git push origin HEAD};func'
 
 alias setproxy='export http_proxy=192.168.1.2:1080 && export https_proxy=192.168.1.2:1080'
