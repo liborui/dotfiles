@@ -23,7 +23,8 @@ rm -rf brew-install
 git -C "$(brew --repo)" remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git
 
 
-# 安装 ZSH and oh-my-zsh, ref: https://blog.csdn.net/shenhonglei1234/article/details/106653646
+# 安装 ZSH and oh-my-zsh, 
+#ref: https://www.jianshu.com/p/246b844f4449
 brew install zsh zsh-completions
 ## 切换到zsh
 sudo chsh -s $(which zsh)
@@ -33,8 +34,6 @@ exec su - $USER
 ## 重启iterm2，安装oh-my-zsh，如果不成功，export一下http_proxy, https_proxy
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ## 换成Powerline字体
-git clone https://github.com/powerline/fonts.git
-cd fonts
-./install.sh
+## 字体在本仓库font文件夹下
 
 # 换到Linux.sh继续设置
