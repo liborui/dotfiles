@@ -36,4 +36,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 ## 换成Powerline字体
 ## 字体在本仓库font文件夹下
 
+# 如果发现有备份拷贝过来的文件夹权限有问题的话，使用这个命令修改至正常权限
+chmod -R 755 *
 # 换到Linux.sh继续设置
