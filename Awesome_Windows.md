@@ -1,2 +1,4 @@
 - https://www.dogfight360.com/blog/475/
   - 改Host，加速微软商店下载 
+- https://github.com/nilaoda/N_m3u8DL-CLI
+  - 下载M3U8视频
