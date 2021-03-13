@@ -22,13 +22,13 @@ ssh-keygen -t rsa -b 4096 -C $email_gitlab -f ~/.ssh/gitlab_id_rsa
 
 # alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 echo '=> Public key is'
-cat ~/.ssh/id_rsa
+cat ~/.ssh/id_rsa.pub
 echo "Now, go to Github.com to paste the Public key"
 echo " "
-cat ~/.ssh/gitee_id_rsa
+cat ~/.ssh/gitee_id_rsa.pub
 echo "Now, go to Gitee.com to paste the Public key"
 echo " "
-cat ~/.ssh/gitlab_id_rsa
+cat ~/.ssh/gitlab_id_rsa.pub
 echo "Now, go to GitLab.com to paste the Public key"
 
 touch ~/.ssh/config
