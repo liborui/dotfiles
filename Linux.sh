@@ -40,10 +40,11 @@ sudo apt install -y build-essential cmake libboost-dev libssl-dev # python3 pyth
 ./git_setup.sh
 
 ## install `oh-my-zsh`
-sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+$ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 ## Setup `oh-my-zsh`
 cp zsh/linux.zshrc ~/.zshrc
+### If use 'powerlevel10k' as the theme, if dont have font, then use theme 'ys'
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 cp zsh/rpi.p10k.zsh ~/.p10k.zsh
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
