@@ -266,6 +266,9 @@ set -g history-limit 100000
 # move status line to top
 #set -g status-position top
 
+# set the $SHELL as the default shell to cope with zsh
+set -g default-shell $SHELL
+
 # split windows
 bind \\ split-window -h
 bind - split-window -v
