@@ -6,7 +6,7 @@
 sudo apt install openssh-server git
 ## Clone this repo
 git clone https://github.com/liborui/dotfiles.git
-## Setup non-passwd login of SSH
+## Setup non-passwd login of SSH (on your PC)
 ssh-copy-id -i ~/.ssh/id_rsa.pub <remote_user>@<remote_ip> -p <remote_port>
 
 
@@ -20,9 +20,6 @@ echo "System is a `getconf LONG_BIT` bit system"
 ## Add USTC/Tsinghua source of apt (focal for 20.04LTS)
 sudo mv /etc/apt/sources.list /etc/apt/sources.list.old
 sudo cp sources.list.ustc /etc/apt/sources.list
-
-## set ssh login without password (on your PC)
-ssh-copy-id -i ~/.ssh/id_rsa.pub <username>@<ip> -p <port>
 
 ## install basic tools
 sudo apt update
