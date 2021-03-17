@@ -24,7 +24,7 @@ sudo cp sources.list.ustc /etc/apt/sources.list
 ## install basic tools
 sudo apt update
 # sudo apt -y upgrade
-sudo apt install -y vim zsh tree tmux net-tools
+sudo apt install -y vim zsh tree tmux net-tools curl
 sudo apt install -y build-essential cmake libboost-dev libssl-dev # python3 python3-dev
 # sudo apt install -y build-essential vim zsh git tree cmake libboost-dev libssl-dev tmux vim httpie youtube-dl pandoc git
 
@@ -37,7 +37,7 @@ sudo apt install -y build-essential cmake libboost-dev libssl-dev # python3 pyth
 ./git_setup.sh
 
 ## install `oh-my-zsh`
-$ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 ## Setup `oh-my-zsh`
 cp zsh/linux.zshrc ~/.zshrc
