@@ -1,5 +1,5 @@
 # 其他系统优化
-## Finder: 显示路径栏
+## Dock栏0延迟
 defaults write com.apple.Dock autohide-delay -float 0 && killall Dock
 ## Alfred workflow在Alfred/文件夹下
 
