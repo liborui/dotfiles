@@ -5,3 +5,6 @@ You can recognize the current input source very easily even if you are using ful
   - 可以单独控制鼠标和触摸板的滑动方向（自然、反转） 
 - http://www.packal.org/
   - Library for Alfred apps
+- Alternative to istat menus
+  - https://github.com/exelban/stats
+  - https://github.com/gao-sun/eul
